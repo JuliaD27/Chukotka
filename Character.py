@@ -42,6 +42,30 @@ class Player:
     # inherited from all npc
     skills = []
 
+    
+#______________________________________________window for choice_____________________________________________________
+
+root.bind('<Return>', dialogue)
+
+def dialogue(event):
+    def first_button:
+        rise_friendship(MASHA)
+
+    def second_button:
+        tell_skill_details(MASHA)
+
+    dial = Toplevel(window)
+    dial['bg'] = 'LightCyan'
+    dial.title('Что будем делать?')
+    dial.geometry('200x150+500+100')
+    dial.grab_set()
+    question = tr.Label(dial, text = '???', bg = 'LightCyan', fg = 'SteelBlue', font = ('Times New Roman', 18))
+    question.place(x = 76, y = 30)
+    btn1 = tr.Button(dial, text = 'Подружимся!', bg = 'Orchid', fg = 'purple', command = first_button)
+    btn1.place(x = 40, y = 80)
+    btn2 = tr.Button(dial, text = 'Узнаем скиллы!', bg = 'SlateBlue', fg = 'Navy', command = second_button)
+    btn2.place(x = 110, y = 80)
+    
 
 # _________________________________________________beginning_________________________________________________________
 root = Tk()
